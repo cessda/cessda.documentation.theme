@@ -15,24 +15,25 @@
 pipeline{
 	agent{
 		docker {
-			image 'ruby:2.7' 
+			image 'ruby:2.7'
 		}
 	}
 	stages{
 		stage('Install Dependencies'){
 			steps{
-				dir('src') {
-					sh 'gem install bundler'
-					sh 'bundle install'
-				}
+				sh 'gem install bundler'
+				sh 'bundle install'
 			}
 		}
 		stage('Build Gem') {
 			steps {
-				dir('src') {
-					sh 'gem build'
-				}
+				sh 'gem build jekyll-cessda-docs.gemspec'
 			}
 		}
+		// stage('Push Gem') {
+		// 	steps {
+		// 		sh "gem push jekyll-cessda-docs-*.gem"
+		// 	}
+		// }
 	}
 }
