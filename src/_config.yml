@@ -8,9 +8,7 @@ color_scheme: light
 
 # Theme
 #theme: just-the-docs
-#theme: jekyll-cessda-docs
 search_enabled: true
-matomo: true
 
 plugins:
   - jekyll-seo-tag
