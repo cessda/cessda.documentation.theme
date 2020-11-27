@@ -29,6 +29,11 @@ pipeline{
 			steps {
 				sh 'gem build jekyll-cessda-docs.gemspec'
 			}
+			post {
+				success {
+					archiveArtifacts 'jekyll-cessda-docs-*.gem'
+				}
+			}
 		}
 		stage('Push Gem') {
 			steps {
@@ -36,7 +41,13 @@ pipeline{
 					sh 'gem push jekyll-cessda-docs-*.gem'
 				}
 			}
-			when { buildingTag() }
+			when {
+  				allOf {
+					// Only publish tagged commits that are built on master
+					branch 'master'
+					buildingTag()
+				}
+			}
 		}
 	}
 }
