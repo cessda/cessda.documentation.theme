@@ -24,28 +24,26 @@ pipeline {
 			}
 		}
 		stage('Build Gem') {
-			steps {
-				sh 'gem build jekyll-cessda-docs.gemspec'
+			stages {
+				stage ('Prerelease') {
+					environment {
+						PRERELEASE = 'true'
+					}
+					steps {
+						sh 'gem build jekyll-cessda-docs.gemspec'
+					}
+					when { not { buildingTag() } }
+				}
+				stage ('Release') {
+					steps {
+						sh 'gem build jekyll-cessda-docs.gemspec'
+					}
+					when { buildingTag() }
+				}
 			}
 			post {
 				success {
 					archiveArtifacts 'jekyll-cessda-docs-*.gem'
-				}
-			}
-		}
-		stage ('Push Prerelease Gem') {
-			environment {
-				PRERELEASE = 'true'
-			}
-			steps {
-				withCredentials([string(credentialsId: 'ad8bacc2-96e7-4192-a4d0-4a954c1c5c09', variable: 'GEM_HOST_API_KEY')]) {
-					sh 'gem push jekyll-cessda-docs-*.gem'
-				}
-			}
-			when {
-				allOf {
-					branch 'master'
-					not { buildingTag() }
 				}
 			}
 		}
@@ -55,13 +53,7 @@ pipeline {
 					sh 'gem push jekyll-cessda-docs-*.gem'
 				}
 			}
-			when {
-  				allOf {
-					// Only publish tagged commits that are built on master
-					branch 'master'
-					buildingTag()
-				}
-			}
+			when { branch 'master' }
 		}
 	}
 }
