@@ -12,15 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 */
-pipeline{
-	agent{
-		docker {
-			image 'ruby:2.7'
-		}
+pipeline {
+	agent {
+		docker { image 'ruby:2.7' }
 	}
-	stages{
-		stage('Install Dependencies'){
-			steps{
+	stages {
+		stage('Install Dependencies') {
+			steps {
 				sh 'gem install bundler'
 				sh 'bundle install'
 			}
@@ -32,6 +30,22 @@ pipeline{
 			post {
 				success {
 					archiveArtifacts 'jekyll-cessda-docs-*.gem'
+				}
+			}
+		}
+		stage ('Push Prerelease Gem') {
+			environment {
+				PRERELEASE = 'true'
+			}
+			steps {
+				withCredentials([string(credentialsId: 'ad8bacc2-96e7-4192-a4d0-4a954c1c5c09', variable: 'GEM_HOST_API_KEY')]) {
+					sh 'gem push jekyll-cessda-docs-*.gem'
+				}
+			}
+			when {
+				allOf {
+					branch 'master'
+					not { buildingTag() }
 				}
 			}
 		}
