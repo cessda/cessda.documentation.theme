@@ -30,10 +30,12 @@ pipeline{
 				sh 'gem build jekyll-cessda-docs.gemspec'
 			}
 		}
-		// stage('Push Gem') {
-		// 	steps {
-		// 		sh "gem push jekyll-cessda-docs-*.gem"
-		// 	}
-		// }
+		stage('Push Gem') {
+			steps {
+				withCredentials([string(credentialsId: 'ad8bacc2-96e7-4192-a4d0-4a954c1c5c09', variable: 'GEM_HOST_API_KEY')]) {
+					sh 'gem push jekyll-cessda-docs-*.gem'
+				}
+			}
+		}
 	}
 }

@@ -5,7 +5,7 @@ CESSDA theme for just-the-docs. These are the source files for building the gem.
 ## Building and pushing
 
 1. set up git and RubyGems user. Instructions here: <https://jekyllrb.com/docs/themes/#publishing-your-theme>
-2. Update the file jekyll-cessda-docs.gemspec with the new version number, for example:
+2. Update the file `jekyll-cessda-docs.gemspec` with the new version number, for example:
 spec.version       = "0.1.4"
 3. Build the gem:
 
