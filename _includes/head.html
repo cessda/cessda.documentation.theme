@@ -36,7 +36,7 @@
   {% seo %}
 
   {% include head_custom.html %}
-  {% if site.matomo == true %}
+  {% if site.matomo_siteid and site.matomo_siteid != "" and site.matomo_siteid != nil %}
   <!-- Matomo -->
 <script type="text/javascript">
   var _paq = window._paq = window._paq || [];
@@ -46,7 +46,7 @@
   (function() {
     var u="//analytics.cessda.eu/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '5']);
+    _paq.push(['setSiteId', '{{ site.matomo_siteid }}']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();

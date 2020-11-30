@@ -45,6 +45,8 @@ Or install it yourself as:
 gem install jekyll-cessda-docs
 ```
 
+See the [CESSDA documentation](https://docs.tech.cessda.eu/platform/documentation_tooling.html) for more details.
+
 ## Development
 
 To set up your environment to develop this theme, run `bundle install`.
