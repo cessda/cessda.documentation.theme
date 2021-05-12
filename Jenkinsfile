@@ -14,16 +14,22 @@
 */
 pipeline {
 	agent {
-		docker { image 'ruby:2.7' }
-	}
+        label 'jnlp-himem'
+    }
 	stages {
 		stage('Install Dependencies') {
+			agent {
+				docker { image 'ruby:2.7' }
+			}
 			steps {
 				sh 'gem install bundler'
 				sh 'bundle install'
 			}
 		}
 		stage('Build Gem') {
+			agent {
+				docker { image 'ruby:2.7' }
+			}
 			stages {
 				stage ('Prerelease') {
 					environment {
@@ -48,6 +54,9 @@ pipeline {
 			}
 		}
 		stage('Push Gem') {
+			agent {
+				docker { image 'ruby:2.7' }
+			}
 			steps {
 				withCredentials([string(credentialsId: 'ad8bacc2-96e7-4192-a4d0-4a954c1c5c09', variable: 'GEM_HOST_API_KEY')]) {
 					sh 'gem push jekyll-cessda-docs-*.gem'
