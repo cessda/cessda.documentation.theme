@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+## [0.1.6] - 2021-05-12
+* Add support for Send-Feedback-Snippet
+
 ## [0.1.5] - 2020-11-30
 
 * Make matomo siteid configurable
