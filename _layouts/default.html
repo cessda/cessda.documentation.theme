@@ -70,7 +70,7 @@ layout: table_wrappers
         {% include nav.html pages=site.html_pages %}
       {% endif %}
     </nav>
-   
+
   </div>
   <div class="main" id="top">
     <div id="main-header" class="main-header">
@@ -183,7 +183,7 @@ layout: table_wrappers
       <div class="search-overlay"></div>
     {% endif %}
   </div>
-  
+
 </div>
 <footer class="site-footer bg-grey-dk-200"><div class="bottombar">
 
@@ -196,5 +196,8 @@ layout: table_wrappers
 </div>
 </div>
  </footer>
+{% if site.send_feedback_snippet and site.send_feedback_snippet != "" and site.send_feedback_snippet != nil %}
+{{ site.send_feedback_snippet }}
+{% endif %}
 </body>
 </html>
