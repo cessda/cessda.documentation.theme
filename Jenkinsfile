@@ -19,7 +19,10 @@ pipeline {
 	stages {
 		stage('Install Dependencies') {
 			agent {
-				docker { image 'ruby:2.7' }
+				docker {
+					image 'ruby:2.7'
+					reuseNode true
+				}
 			}
 			steps {
 				sh 'gem install bundler'
@@ -28,7 +31,10 @@ pipeline {
 		}
 		stage('Build Gem') {
 			agent {
-				docker { image 'ruby:2.7' }
+				docker {
+					image 'ruby:2.7'
+					reuseNode true
+				}
 			}
 			stages {
 				stage ('Prerelease') {
@@ -55,7 +61,10 @@ pipeline {
 		}
 		stage('Push Gem') {
 			agent {
-				docker { image 'ruby:2.7' }
+				docker {
+					image 'ruby:2.7'
+					reuseNode true
+				}
 			}
 			steps {
 				withCredentials([string(credentialsId: 'ad8bacc2-96e7-4192-a4d0-4a954c1c5c09', variable: 'GEM_HOST_API_KEY')]) {
