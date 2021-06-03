@@ -71,7 +71,7 @@ pipeline {
 					sh 'gem push jekyll-cessda-docs-*.gem'
 				}
 			}
-			when { branch 'master' }
+			when { anyOf { branch 'master'; buildingTag() } }
 		}
 	}
 }
