@@ -1,10 +1,12 @@
 # CESSDA Technical Guidelines
 ---
 # If you make changes here, you need to restart Jekyll to apply them
+# Add url to service being documented using serviceurl. Otherwise logo/title will link to documentation start page
 title: CESSDA Technical Guidelines
 baseurl: /
 logo: assets/CESSDA.png
 color_scheme: light
+serviceurl: 
 
 # Theme
 #theme: just-the-docs
