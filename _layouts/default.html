@@ -48,7 +48,7 @@ layout: table_wrappers
   <div class="side-bar">
     <div class="site-header">
       <a href="{% if site.serviceurl %}
-      {{ site.serviceurl | absolute_url }}
+      {{ site.serviceurl }}
     {% else %}
     {{ '/' | absolute_url }}
     {% endif %}" class="site-title lh-tight">{% include title.html %}</a>
