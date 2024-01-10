@@ -25,7 +25,7 @@ pipeline {
 				}
 			}
 			steps {
-				sh 'gem install bundler'
+				sh 'gem install bundler -v 2.4.22'
 				sh 'bundle install'
 			}
 		}
