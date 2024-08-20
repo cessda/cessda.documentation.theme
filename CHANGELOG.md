@@ -6,15 +6,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [0.1.10] - 2024-01-30
-* Upgrade to include CESSDA Feedback form mechansim 
+* Upgrade to include CESSDA Feedback form mechansim
+
+## [0.1.8] - 2021-06-23
+
+* Add the ability to set a custom site URL so that clicking the logo can redirect to somewhere other that the documentation root
 
 ## [0.1.7] - 2021-06-03
+
 * Upgrade to include cloud based matomo tracker
 
 ## [0.1.6] - 2021-05-12
+
 * Add support for Send-Feedback-Snippet
 
 ## [0.1.5] - 2020-11-30
 
 * Make matomo siteid configurable
 * Turn search and matomo off by default
+
+[0.1.8]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.1.8
+[0.1.7]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.1.7
+[0.1.6]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.1.6
+[0.1.5]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.1.5

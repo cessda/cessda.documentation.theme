@@ -1,11 +1,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <button id="zammad-feedback-form" style="position: fixed; right: 0; bottom: 0; font-size: 14px; color: white; background-color: #4e4d56; border: none; padding: 0px 10px; height: 40px; line-height: 40px;">Send Feedback</button>
-<script id="zammad_form_script" src="https://eosc-helpdesk.eosc-portal.eu/assets/form/form.js"></script>
+<script id="zammad_form_script" src="https://helpdesk.cessda.eu/assets/form/form.js"></script>
 <script>
   $(function() {
     $('#zammad-feedback-form').ZammadForm({
-      agreementMessage:'  Accept CESSDA <a target="_blank" href="https://www.cessda.eu/Privacy-policy">Data Privacy Policy</a> & <a target="_blank" href="https://www.cessda.eu/Acceptable-Use-Policy">Acceptable Use Policy</a>', 
+      agreementMessage:'  Accept CESSDA <a target="_blank" href="https://www.cessda.eu/Privacy-policy">Data Privacy Policy</a> & <a target="_blank" href="https://www.cessda.eu/Acceptable-Use-Policy">Acceptable Use Policy</a>',
       messageTitle: 'Service Documentation Feedback Form',
       messageSubmit: 'Submit',
       messageThankYou: 'Thank you for your inquiry (#%s)! We\'ll contact you as soon as possible.',
