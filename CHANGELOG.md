@@ -5,6 +5,10 @@ All notable changes to the CESSDA documentation theme will be recorded here.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-02-26
+
+* Weaken the dependency of Jekyll to the major version number
+
 ## [0.1.12] - 2025-06-06
 
 * Remove references to the on-prem Matomo instance
@@ -38,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Make Matomo `siteid` configurable
 * Turn search and Matomo off by default
 
+[0.2.0]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.2.0
 [0.1.12]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.1.12
 [0.1.11]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.1.11
 [0.1.10]: https://github.com/cessda/cessda.documentation.theme/releases/tag/0.1.10
