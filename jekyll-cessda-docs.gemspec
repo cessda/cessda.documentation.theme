@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-cessda-docs"
-  spec.version       = "0.1.12"
+  spec.version       = "0.2.0"
   spec.version       = "#{spec.version}.pre.#{ENV['GIT_COMMIT']}" if ENV['PRERELEASE']
   spec.authors       = ["openconcept"]
   spec.email         = ["post@openconcept.no"]
@@ -17,6 +17,6 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
 
-  spec.add_runtime_dependency "jekyll", "~> 4.1"
-  spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.6"
+  spec.add_runtime_dependency "jekyll", "~> 4"
+  spec.add_runtime_dependency "jekyll-seo-tag", "~> 2"
 end
