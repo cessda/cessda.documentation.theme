@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-cessda-docs"
-  spec.version       = "0.2.0"
+  spec.version       = "0.3.0"
   spec.version       = "#{spec.version}.pre.#{ENV['GIT_COMMIT']}" if ENV['PRERELEASE']
   spec.authors       = ["openconcept"]
   spec.email         = ["post@openconcept.no"]

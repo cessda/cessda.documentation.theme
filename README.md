@@ -47,6 +47,24 @@ gem install jekyll-cessda-docs
 
 See the [CESSDA documentation](https://docs.tech.cessda.eu/platform/documentation_tooling.html) for more details.
 
+## Configuration
+
+These settings are configured in your website's `_config.yaml`.
+
+| Configuration | Description |
+| ------------- | ----------- |
+| ga_tracking   | Google Analytics site id |
+| search_enabled | Enable site search |
+| matomo_host | Matomo host |
+| matomo_siteid | Matomo site ID |
+| nav_sort | If set to `case_insensitive`, enables case insensitive sort |
+| logo | Site logo |
+| title | Site title |
+| lang | Site language, defaults to 'en-US' |
+| send_feedback_snippet | HTML feedback snippet |
+
+Both matomo_host and matomo_siteid need to be configured for Matomo analytics to work.
+
 ## Development
 
 To set up your environment to develop this theme, run `bundle install`.
